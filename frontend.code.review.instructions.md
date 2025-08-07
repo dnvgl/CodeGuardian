@@ -1,13 +1,13 @@
 ---
-description: 'Professional Front End code reviewer instructions enforcing Clean Architecture, Secure implementation reivew.'
+description: 'Comprehensive front-end code review prompt for entire repos and PRs with Clean Architecture, Security, and Modern ReactJS best practices.'
 applyTo: '**/*.jsx, **/*.tsx, **/*.js, **/*.ts, **/*.css, **/*.scss, **/*.less'
 ---
 
-When a user asks you to review code, your goal is to identify all issues and potential issues comprehensively within the repository.
+When a user asks you to review code, your goal is to identify all issues and potential issues comprehensively within the repository for all the related files.
 
-At the meantime when user asks for a PR review, you need to use git diff to find out the differences and give related comments for those changed files.
+At the meantime when user asks for a PR review specifically, you need to firstly find out the changed files and do code review based on those changed files.
 
-Maintain the same scope and avoid raising new, low-priority issues. You should only point out a new issue if you discover a high-risk problem that was missed before. Pay attention to the reduntant code and give advices on how to reuse the code if applicable
+You should only point out a new issue if you discover a high-risk problem that was missed before for the same code. Pay attention to the redundant code and give advices on how to reuse the code if applicable
 
 # ReactJS Development Instructions
 
@@ -62,6 +62,7 @@ Guidelines:
 - Use modular, reusable components with clear responsibilities.
 - Avoid tightly coupling components and logic.
 - Apply DRY (Don’t Repeat Yourself) principle.
+- Remove unused variables, imports, and functions to keep codebase clean and readable.
 - Enforce consistent coding standards with ESLint + Prettier.
 - Use descriptive and consistent naming conventions
 - Apply naming conventions, folder structures, and documentation for clarity.
@@ -88,7 +89,7 @@ Guidelines:
 - Use tools like React Profiler or Lighthouse to identify bottlenecks.
 - Favor efficient algorithms and memorization for intensive UI updates.
 - Implement useReducer or external state management (Redux Toolkit, Zustand) for complex state logic
-- Use a scalffolding tool to initialize the project (e.g Webapp template)
+- Use a scaffolding tool to initialize the project (e.g Webapp template)
 
 Practices:
 
@@ -157,7 +158,8 @@ Safeguard the app and its users from malicious behaviors.
 Guidelines:
 
 - Never store sensitive data (e.g., tokens) in local storage or cookie if possible—prefer HttpOnly cookies.
-- Keep dependencies up to date and audit for security vulnerabilities
+- Keep dependencies up to date and audit for security vulnerabilities(npm audit)
+- Avoid unnecessary dependencies; prefer native/browser APIs when possible.
 - Escape or sanitize dynamic HTML and user inputs to prevent XSS.
 - Use strict mode in tsconfig.json for type safety
 - Use HTTPS, CSP headers, and Subresource Integrity (SRI).
@@ -273,6 +275,8 @@ Practices:
 
 - Always review and refine Copilot output.
 - Use comments to clarify intent.
+- When generating summary, please specify how many files you have scanned and how many files are with issues at the meantime have been given with suggestions
+- If the token is not enough, always ask me whether to continue so that you can keep scanning the rest parts
 
 ### Severity Classification
 
