@@ -5,8 +5,6 @@ applyTo: '**/*.jsx, **/*.tsx, **/*.js, **/*.ts, **/*.css, **/*.scss, **/*.less'
 
 When a user asks you to review code, your goal is to identify all issues and potential issues comprehensively within the repository for all the related files.
 
-At the meantime when user asks for a PR review specifically, you need to firstly find out the changed files and do code review based on those changed files.
-
 You should only point out a new issue if you discover a high-risk problem that was missed before for the same code. Pay attention to the redundant code and give advices on how to reuse the code if applicable
 
 # ReactJS Development Instructions
