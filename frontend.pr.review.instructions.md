@@ -3,9 +3,13 @@ description: 'Comprehensive front-end code review prompt for entire repos and PR
 applyTo: '**/*.jsx, **/*.tsx, **/*.js, **/*.ts, **/*.css, **/*.scss, **/*.less'
 ---
 
-When a user asks for a PR review, you need to firstly find out the changed files inside the PR and do code review based on those changed files, your goal is to identify all issues and potential issues comprehensively
+When a user asks for a PR review, you need to firstly find out all the key information, for example user give you with the url to the PR which matches the pattern:
+https://{orgnizationName}.visualstudio.com/{projectName}/\_git/{repositoryName}/pullrequest/{prNumber} you can firstly get all the information and locate the PR. E.g orgnizationName stands for the name of the orgnization, projectName means the name of the project, repositoryName stands for the name of the repository, and you can match the PR number with the prNumber and always use azure devops for the latest information regarding this PR instead of using the local commits.
+
+Submit line specific comment back to azure devops into the PR where filePath should be relative path, prefix with "/". This is very important, I need you to submit comments back into azure devops PR, not just show me locally
 
 You should only point out a new issue if you discover a high-risk problem that was missed before for the same code. Pay attention to the redundant code and give advices on how to reuse the code if applicable
+
 
 # ReactJS Development Instructions
 
