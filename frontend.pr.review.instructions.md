@@ -8,6 +8,8 @@ https://{orgnizationName}.visualstudio.com/{projectName}/\_git/{repositoryName}/
 
 Please don't review the deleted code and firstly generate a local MD file with all the details and then submit line specific comment back to azure devops into the PR where filePath should be relative path, prefix with "/". Also you need to put your comments under the related lines in azure devops. This is very important, I need you to submit comments back into azure devops PR, not just show me locally and only review the changed files instead of the whole codebase!
 
+You don't need to list the positive feedbacks, finding problem is your only mission.
+
 You should only point out a new issue if you discover a high-risk problem that was missed before for the same code. Pay attention to the redundant code and give advices on how to reuse the code if applicable
 
 
